@@ -17,20 +17,11 @@ public class WindowScript : MonoBehaviour, IDragHandler
     }
     public void OnBorderBtnClick()
     {
-        //Screen.SetResolution(800, 600, FullScreenMode.Windowed);
-        //BorderlessWindow.SetFramedWindow();
-        //Debug.Log("Set Framed");
-        //displayResolution.ChangeTextRes();
-        StartCoroutine(ChangeDisplaySequence(true, FullScreenMode.Windowed));
-        
+        StartCoroutine(ChangeDisplaySequence(true, FullScreenMode.Windowed));   
     }
 
     public void OnNoBorderBtnClick()
     {
-        //Screen.SetResolution(800, 600, FullScreenMode.Windowed);
-        //BorderlessWindow.SetFramelessWindow();
-        //Debug.Log("Set Frameless");
-        //displayResolution.ChangeTextRes();
         StartCoroutine(ChangeDisplaySequence(false, FullScreenMode.Windowed));
     }
 
@@ -42,12 +33,10 @@ public class WindowScript : MonoBehaviour, IDragHandler
         {
             Debug.Log("Set Framed");
             BorderlessWindow.SetFramedWindow(defaultWindowSize);  
-            //BorderlessWindow.MoveWindowPos(Vector2Int.zero, Screen.width + borderSize.x, Screen.height + borderSize.y);
         }else
         {
             Debug.Log("Set Frameless");
             BorderlessWindow.SetFramelessWindow(defaultWindowSize);
-            //BorderlessWindow.MoveWindowPos(Vector2Int.zero, Screen.width - borderSize.x, Screen.height - borderSize.y);
         }
         displayResolution.ChangeTextRes();
     }
